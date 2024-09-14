@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Podcast Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f6f6f6;
+            color: #333;
+        }
+
+
+
+        .scrolling-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #FFEB3B;
+            color: #004D40;
+            padding: 20px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .scrolling-text {
+            white-space: nowrap;
+            display: inline-block;
+            font-size: 2.5em;
+            font-weight: 600;
+            animation: scroll 5s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004D40;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: #FFEB3B;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background-color: #004D40;
+            color: white;
+            height: 80vh;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .hero-content button {
+            padding: 15px 25px;
+            background-color: #FFEB3B;
+            color: #004D40;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-content button:hover {
+            background-color: #FBC02D;
+        }
+
+        .intro-section {
+            background-color: #f6f6f6;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 2.8em;
+            color: #004D40;
+            margin-bottom: 30px;
+        }
+
+        .intro-section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .about-section {
+            background-color: #f6f6f6;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.8em;
+            color: #004D40;
+            margin-bottom: 30px;
+        }
+
+        .about-us {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .about-us div {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-us img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .about-us h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #004D40;
+        }
+
+        .about-us p {
+            font-size: 1em;
+            color: #757575;
+        }
+
+        .about-us p span {
+            color: #d5c112;
+        }
+
+        .podcast-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .podcast-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #004D40;
+        }
+
+        .podcast-episodes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .episode {
+            background-color: #fff;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .episode h3 {
+            font-size: 1.5em;
+            color: #004D40;
+            margin-bottom: 15px;
+        }
+
+        .episode p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .episode button {
+            padding: 10px 15px;
+            background-color: #FFEB3B;
+            color: #004D40;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .episode button:hover {
+            background-color: #FBC02D;
+        }
+
+        .testimonial-section {
+            background-color: #004D40;
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .testimonial-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .testimonials {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .testimonial {
+            background-color: #00695C;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            max-width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-size: 1.1em;
+        }
+
+        .testimonial h3 {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #FFEB3B;
+        }
+
+        .newsletter-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #FFEB3B;
+        }
+
+        .newsletter-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #004D40;
+        }
+
+        .newsletter-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .newsletter-form input[type="email"] {
+            padding: 15px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 300px;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: #004D40;
+            color: #FFEB3B;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #00695C;
+        }
+
+        footer {
+            background-color: #004D40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+        <div class="scrolling-container">
+            <div class="scrolling-text">🐦 TWEETY PODCAST 🐦</div>
+        </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Latest Episodes</h1>
+            <p>Join us for weekly conversations on trending topics, interviews with inspiring personalities, and much more.</p>
+            <button>Listen Now</button>
+        </div>
+        <img src="logo.png" alt="Podcast Image" style="width: 400px; height: 400px;"/>
+    </section>
+
+    <section class="intro-section" id="intro">
+        <h2>Welcome to the Tweety Podcast!</h2>
+        <p>
+            Join us as we dive into the vibrant world of <span style="color: #FFC107;"><strong>ideas</strong></span>, 
+            <span style="color: #FFC107;"><strong>stories</strong></span>, and discussions that inspire 
+            <span style="color: #FFC107;"><strong>curiosity</strong></span> and ignite 
+            <span style="color: #FFC107;"><strong>passion</strong></span>. We bring you engaging conversations with fascinating guests—from thought leaders and innovators to everyday heroes—who share their unique experiences and insights.
+        </p>
+        <p>
+            Whether you’re seeking <span style="color: #FFC107;"><strong>inspiration</strong></span>, 
+            <span style="color: #FFC107;"><strong>knowledge</strong></span>, or just a fresh perspective, the Tweety Podcast is your go-to destination for enriching content that resonates with your journey. So, tune in, get comfortable, and let’s explore the incredible 
+            <span style="color: #FFC107;"><strong>stories</strong></span> that shape our world, one episode at a time!
+        </p>
+    </section>
+    
+
+              
+    </section>
+
+    <section class="about-section" id="about">
+        <h2>About Us</h2>
+        <div class="about-us">
+            <div>
+                <img src="https://via.placeholder.com/150x150" alt="Team Member 1">
+                <h3>Kartik</h3>
+                <p><span>Position</span></p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/150x150" alt="Team Member 2">
+                <h3>Grace</h3>
+                <p><span>Position</span></p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/150x150" alt="Team Member 3">
+                <h3>Kaka</h3>
+                <p><span>Position</span></p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/150x150" alt="Team Member 4">
+                <h3>Vyandra</h3>
+                <p><span>Position</span></p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/150x150" alt="Team Member 5">
+                <h3>Logan</h3>
+                <p><span>Position</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="podcast-section" id="episodes">
+        <h2>Podcast Episodes</h2>
+        <div class="podcast-episodes">
+            <div class="episode">
+                <h3>Episode 1: How to Be a Leader</h3>
+                <p>Join us as we talk to industry leaders on what it takes to lead effectively.</p>
+                <button>Play Now</button>
+            </div>
+            <div class="episode">
+                <h3>Episode 2: Personal Growth and Success</h3>
+                <p>Explore the journey of self-improvement with our expert guests.</p>
+                <button>Play Now</button>
+            </div>
+            <div class="episode">
+                <h3>Episode 3: The Future of AI</h3>
+                <p>What AI means for the future of industries and daily life.</p>
+                <button>Play Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <h2>What Listeners Are Saying</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"An incredible podcast! The host really knows how to keep things interesting and informative."</p>
+                <h3>- Jane Doe</h3>
+            </div>
+            <div class="testimonial">
+                <p>"Each episode offers something new. I always learn something valuable."</p>
+                <h3>- John Smith</h3>
+            </div>
+            <div class="testimonial">
+                <p>"Highly recommend this to anyone looking to stay informed on various topics."</p>
+                <h3>- Alex Lee</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest episodes, news, and exclusive content.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Your Podcast Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
